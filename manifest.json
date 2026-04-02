@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Translate to Chinese",
+  "version": "1.0.0",
+  "description": "Translates highlighted English text to Simplified Chinese using LibreTranslate.",
+  "permissions": [],
+  "host_permissions": ["http://localhost:5000/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
