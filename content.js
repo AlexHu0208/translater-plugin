@@ -1,3 +1,5 @@
+const MAX_Z_INDEX = '2147483647';
+
 function validateSelection(text) {
   return text.length >= 2 && text.length <= 500;
 }
@@ -5,10 +7,16 @@ function validateSelection(text) {
 function createTooltipElement() {
   const el = document.createElement('div');
   el.id = 'translator-tooltip';
-  el.innerHTML = `
-    <span class="translator-label">ZH</span>
-    <span class="translator-text"></span>
-  `;
+
+  const label = document.createElement('span');
+  label.className = 'translator-label';
+  label.textContent = 'ZH';
+
+  const text = document.createElement('span');
+  text.className = 'translator-text';
+
+  el.appendChild(label);
+  el.appendChild(text);
   return el;
 }
 
@@ -21,7 +29,7 @@ function positionTooltip(tooltip, rect) {
   tooltip.style.position = 'fixed';
   tooltip.style.left = `${rect.left}px`;
   tooltip.style.top = `${top}px`;
-  tooltip.style.zIndex = '2147483647';
+  tooltip.style.zIndex = MAX_Z_INDEX;
 }
 
 function showLoading(tooltip) {
@@ -54,6 +62,8 @@ function handleMouseUp() {
   const selection = window.getSelection();
   const text = selection ? selection.toString().trim() : '';
   if (!validateSelection(text)) return;
+
+  if (!selection.rangeCount) return;
 
   hideTooltip();
 
