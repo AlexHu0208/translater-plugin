@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 global.fetch = jest.fn();
 const { translateText } = require('../background');
 
