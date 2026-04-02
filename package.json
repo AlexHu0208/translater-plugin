@@ -1,0 +1,17 @@
+{
+  "name": "translater-plugin",
+  "version": "1.0.0",
+  "description": "Translates highlighted English text to Simplified Chinese using LibreTranslate.",
+  "main": "background.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0",
+    "jest-webextension-mock": "^2.0.0"
+  }
+}
