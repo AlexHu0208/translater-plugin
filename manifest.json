@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Translates highlighted English text to Simplified Chinese using LibreTranslate.",
   "permissions": [],
-  "host_permissions": ["http://localhost:5000/*"],
+  "host_permissions": ["http://localhost:5001/*"],
   "background": {
     "service_worker": "background.js"
   },

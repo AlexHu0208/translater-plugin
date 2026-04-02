@@ -19,7 +19,7 @@ describe('translateText', () => {
     const result = await translateText('Hello');
 
     expect(result).toEqual({ success: true, translatedText: '你好' });
-    expect(fetch).toHaveBeenCalledWith('http://localhost:5000/translate', {
+    expect(fetch).toHaveBeenCalledWith('http://localhost:5001/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ q: 'Hello', source: 'en', target: 'zh', format: 'text' })
